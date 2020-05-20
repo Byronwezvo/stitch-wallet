@@ -1,16 +1,7 @@
-# stitchwallert
+# Stitch Wallet
 
-A new Flutter application.
+Mobile wallet solution developed by Byron Wezvo.
 
-## Getting Started
+## Introduction
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Stitch pay is a mobile payment plartform developed by Byron Wezvo. The flutter application is a front end to the api `monkey-api`, which again is developed by the same developer.

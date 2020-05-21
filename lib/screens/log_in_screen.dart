@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/widgets/clickable_text.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
+import 'package:stitchwallert/widgets/pill_button.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -22,15 +24,15 @@ class _LogInScreenState extends State<LogInScreen> {
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: size.height / 8,
+                  height: size.height / 10,
                 ),
                 Text(
                   'Stitch',
                   style: TextStyle(
                     fontFamily: 'Lisa-Lovely',
-                    fontSize: 60.0,
+                    fontSize: 70.0,
                     color: appRedColor,
-                    letterSpacing: 1.5,
+                    letterSpacing: 3,
                   ),
                 ),
                 InputField(
@@ -38,54 +40,24 @@ class _LogInScreenState extends State<LogInScreen> {
                   hiddenText: false,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 InputField(
                   hintText: 'Password',
                   hiddenText: true,
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 50,
                 ),
-                GestureDetector(
-                  onTap: () => print('works'),
-                  child: Container(
-                    height: 50,
-                    width: 180,
-                    child: Row(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 20,
-                            right: 30,
-                          ),
-                          child: Container(
-                            height: 15,
-                            width: 15,
-                            decoration: BoxDecoration(
-                              color: appRedColor,
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          'Log in',
-                          style: TextStyle(
-                            color: appRedColor,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
-                            fontSize: 18,
-                          ),
-                        ),
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                      color: appWhiteColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(50),
-                      ),
-                    ),
-                  ),
+                PillButton(
+                  name: 'Log In',
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                ClickableText(
+                  text: 'Create Account',
+                  route: 'createAccount',
                 ),
               ],
             ),

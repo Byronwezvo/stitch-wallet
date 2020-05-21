@@ -9,7 +9,7 @@ class InputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: SizedBox(
         height: 50,
         child: Stack(
@@ -17,17 +17,22 @@ class InputField extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: appWhiteColor,
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: TextField(
                 obscureText: hiddenText,
                 decoration: InputDecoration(
                   hintText: hintText,
+                  hintStyle: TextStyle(
+                    fontSize: 15,
+                    letterSpacing: 1,
+                    color: appRedColor,
+                  ),
                   fillColor: appWhiteColor,
-                  border: null,
+                  border: InputBorder.none,
                 ),
               ),
             )

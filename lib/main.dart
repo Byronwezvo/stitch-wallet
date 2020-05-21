@@ -6,6 +6,7 @@ import 'package:stitchwallert/utils/colors.dart';
 
 void main() => runApp(MyApp());
 
+// this is a comment
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

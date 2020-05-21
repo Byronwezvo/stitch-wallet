@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/widgets/input_field.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _LogInScreenState extends State<LogInScreen> {
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: size.height / 5,
+                  height: size.height / 8,
                 ),
                 Text(
                   'Stitch',
@@ -31,28 +33,57 @@ class _LogInScreenState extends State<LogInScreen> {
                     letterSpacing: 1.5,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Number',
-                      hintText: '07xxxxxxxx',
-                    ),
-                  ),
+                InputField(
+                  hintText: 'Mobile Number',
+                  hiddenText: false,
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      fillColor: appWhiteColor,
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                      hintText: '******',
+                InputField(
+                  hintText: 'Password',
+                  hiddenText: true,
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                GestureDetector(
+                  onTap: () => print('works'),
+                  child: Container(
+                    height: 50,
+                    width: 180,
+                    child: Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 20,
+                            right: 30,
+                          ),
+                          child: Container(
+                            height: 15,
+                            width: 15,
+                            decoration: BoxDecoration(
+                              color: appRedColor,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Log in',
+                          style: TextStyle(
+                            color: appRedColor,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                      color: appWhiteColor,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(50),
+                      ),
                     ),
                   ),
                 ),

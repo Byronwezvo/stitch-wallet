@@ -32,7 +32,7 @@ class PillButton extends StatelessWidget {
                     BoxShadow(
                       color: appdarkShadowColor,
                       blurRadius: 3,
-                      offset: Offset(1, 2),
+                      offset: Offset(1, 1),
                     ),
                   ],
                 ),

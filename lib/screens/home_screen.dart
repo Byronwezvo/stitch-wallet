@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/componants/home_upper_componant.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,14 +12,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: appWhiteColor,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Home'),
       ),
       drawer: Drawer(),
-      body: Container(
-        color: appRedColor,
-        height: size.height / 3,
+      body: Column(
+        children: <Widget>[
+          UpperComponant(size: size),
+          Container(
+            color: appBlackColor,
+            height: size.height / 2 - 41,
+          )
+        ],
       ),
     );
   }

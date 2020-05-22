@@ -22,7 +22,7 @@ class NotificationsBar extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: Text(
-                'You have 20 notifications',
+                'Notifications',
                 style: TextStyle(
                   color: appBlackColor,
                   fontWeight: FontWeight.bold,
@@ -30,14 +30,14 @@ class NotificationsBar extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: size.width / 3 + 40,
+              width: size.width / 3 + 120,
             ),
             Dot(color: appBlackColor),
-            SizedBox(width: 3),
+            SizedBox(width: 5),
             Dot(color: appBlackColor),
-            SizedBox(width: 3),
+            SizedBox(width: 5),
             Dot(color: appBlackColor),
-            SizedBox(width: 3),
+            SizedBox(width: 5),
           ],
         ),
       ),

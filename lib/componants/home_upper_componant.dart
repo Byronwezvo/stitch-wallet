@@ -3,8 +3,10 @@ import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/notifications_bar.dart';
 
 class UpperComponant extends StatelessWidget {
+  final String amount;
   const UpperComponant({
     Key key,
+    this.amount,
     @required this.size,
   }) : super(key: key);
 
@@ -20,7 +22,7 @@ class UpperComponant extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Text(
-            '\$2 020',
+            amount,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               letterSpacing: 1,

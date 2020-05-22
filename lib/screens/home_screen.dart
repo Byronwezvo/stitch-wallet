@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/componants/home_bottom_componant.dart';
 import 'package:stitchwallert/componants/home_upper_componant.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
@@ -20,11 +21,11 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(),
       body: Column(
         children: <Widget>[
-          UpperComponant(size: size),
-          Container(
-            color: appBlackColor,
-            height: size.height / 2 - 41,
-          )
+          UpperComponant(
+            size: size,
+            amount: '\$2 080',
+          ),
+          BottomComponant(size: size)
         ],
       ),
     );

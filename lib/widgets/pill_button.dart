@@ -53,9 +53,9 @@ class PillButton extends StatelessWidget {
           color: appWhiteColor,
           boxShadow: [
             BoxShadow(
-              blurRadius: 6,
+              blurRadius: 3,
               color: appdarkShadowColor,
-              offset: Offset(3, 3),
+              offset: Offset(1, 2),
             ),
           ],
           borderRadius: BorderRadius.all(

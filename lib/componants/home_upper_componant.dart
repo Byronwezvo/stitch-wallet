@@ -48,6 +48,13 @@ class UpperComponant extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: appRedColor,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 3,
+                  color: appdarkShadowColor,
+                  offset: Offset(2, 2),
+                ),
+              ],
               borderRadius: BorderRadius.circular(5),
             ),
           ),

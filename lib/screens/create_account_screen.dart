@@ -13,7 +13,15 @@ class _CreateAccountState extends State<CreateAccount> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appBlackColor,
-        title: Text('Create a new Account'),
+        iconTheme: IconThemeData(
+          color: appWhiteColor,
+        ),
+        title: Text(
+          'Create a new Account',
+          style: TextStyle(
+            color: appWhiteColor,
+          ),
+        ),
       ),
       body: Container(
         color: appBlackColor,

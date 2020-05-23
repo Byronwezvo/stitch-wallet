@@ -18,6 +18,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
             color: appBlackColor,
           ),
         ),
+        iconTheme: IconThemeData(
+          color: appBlackColor,
+        ),
       ),
     );
   }

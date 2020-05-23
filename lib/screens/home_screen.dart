@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/componants/home_bottom_componant.dart';
+import 'package:stitchwallert/componants/home_left_drawer.dart';
 import 'package:stitchwallert/componants/home_upper_componant.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
@@ -16,6 +17,10 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: appBlackColor,
       appBar: AppBar(
         centerTitle: true,
+        iconTheme: IconThemeData(
+          color: appBlackColor,
+          size: 1,
+        ),
         title: Text(
           'Home',
           style: TextStyle(
@@ -23,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      drawer: Drawer(),
+      drawer: LeftDrawer(),
       body: Column(
         children: <Widget>[
           UpperComponant(

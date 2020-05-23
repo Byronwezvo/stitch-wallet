@@ -52,7 +52,7 @@ class UpperComponant extends StatelessWidget {
                 BoxShadow(
                   blurRadius: 3,
                   color: appdarkShadowColor,
-                  offset: Offset(2, 2),
+                  offset: Offset(1, 2),
                 ),
               ],
               borderRadius: BorderRadius.circular(5),

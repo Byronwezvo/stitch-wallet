@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/widgets/tile.dart';
 
 class BottomComponant extends StatelessWidget {
   const BottomComponant({
@@ -11,9 +11,48 @@ class BottomComponant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: appBlackColor,
+    return SizedBox(
       height: size.height / 2 - 41,
+      // TODO : Replace with a listview builder
+      child: ListView(
+        children: <Widget>[
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'You send money to 079845287',
+            amount: '\$20.00',
+          ),
+        ],
+      ),
     );
   }
 }

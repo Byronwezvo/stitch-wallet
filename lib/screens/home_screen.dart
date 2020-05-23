@@ -13,10 +13,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: appWhiteColor,
+      backgroundColor: appBlackColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Home'),
+        title: Text(
+          'Home',
+          style: TextStyle(
+            color: appBlackColor,
+          ),
+        ),
       ),
       drawer: Drawer(),
       body: Column(

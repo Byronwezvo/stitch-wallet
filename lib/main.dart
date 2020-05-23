@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/create_account_screen.dart';
+import 'package:stitchwallert/screens/history_screen.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/log_in_screen.dart';
 import 'package:stitchwallert/screens/notifications_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'homepage': (BuildContext ctx) => HomePage(),
         'notifications': (BuildContext ctx) => NotificationsScreen(),
+        'history': (BuildContext ctx) => HistoryScreen(),
         'createAccount': (BuildContext ctx) => CreateAccount(),
       },
     );

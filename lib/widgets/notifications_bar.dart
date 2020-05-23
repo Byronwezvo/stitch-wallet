@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
-import 'package:stitchwallert/widgets/dot.dart';
 
 class NotificationsBar extends StatelessWidget {
   const NotificationsBar({
@@ -29,15 +28,6 @@ class NotificationsBar extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              width: size.width / 3 + 120,
-            ),
-            Dot(color: appBlackColor),
-            SizedBox(width: 5),
-            Dot(color: appBlackColor),
-            SizedBox(width: 5),
-            Dot(color: appBlackColor),
-            SizedBox(width: 5),
           ],
         ),
       ),

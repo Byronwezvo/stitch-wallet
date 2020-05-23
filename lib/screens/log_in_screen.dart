@@ -20,41 +20,43 @@ class _LogInScreenState extends State<LogInScreen> {
         width: double.infinity,
         color: appBlackColor,
         child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: size.height / 6,
-                ),
-                SizedBox(
-                  height: size.width / 2,
-                  child: Image.asset('assets/images/appname.png'),
-                ),
-                InputField(
-                  hintText: 'Mobile Number',
-                  hiddenText: false,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                InputField(
-                  hintText: 'Password',
-                  hiddenText: true,
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                PillButton(
-                  name: 'Log In',
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                ClickableText(
-                  text: 'Create Account',
-                  route: 'createAccount',
-                ),
-              ],
+          child: SafeArea(
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: size.height / 6,
+                  ),
+                  SizedBox(
+                    height: size.width / 2,
+                    child: Image.asset('assets/images/appname.png'),
+                  ),
+                  InputField(
+                    hintText: 'Mobile Number',
+                    hiddenText: false,
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  InputField(
+                    hintText: 'Password',
+                    hiddenText: true,
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  PillButton(
+                    name: 'Log In',
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ClickableText(
+                    text: 'Create Account',
+                    route: 'createAccount',
+                  ),
+                ],
+              ),
             ),
           ),
         ),

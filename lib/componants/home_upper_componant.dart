@@ -15,7 +15,7 @@ class UpperComponant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //color: Colors.teal,
+      color: appWhiteColor,
       height: size.height / 2 - 41,
       width: size.width,
       child: Column(

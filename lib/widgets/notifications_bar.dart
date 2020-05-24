@@ -23,7 +23,7 @@ class NotificationsBar extends StatelessWidget {
               child: Text(
                 'Notifications',
                 style: TextStyle(
-                  color: appBlackColor,
+                  color: appBlackTextColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),

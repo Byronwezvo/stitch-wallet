@@ -15,9 +15,14 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         backgroundColor: appWhiteColor,
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: appBlackColor,
+          color: appBlackTextColor,
         ),
-        title: Text('Notifications'),
+        title: Text(
+          'Notifications',
+          style: TextStyle(
+            color: appBlackTextColor,
+          ),
+        ),
       ),
     );
   }

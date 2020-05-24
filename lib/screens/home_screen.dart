@@ -19,13 +19,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: appWhiteColor,
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: appBlackColor,
+          color: appBlackTextColor,
           size: 1,
         ),
         title: Text(
           'Home',
           style: TextStyle(
-            color: appBlackColor,
+            color: appBlackTextColor,
           ),
         ),
       ),

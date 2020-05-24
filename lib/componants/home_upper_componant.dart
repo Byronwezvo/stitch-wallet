@@ -26,7 +26,7 @@ class UpperComponant extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               letterSpacing: 1,
-              color: appBlackColor,
+              color: appBlackTextColor,
               fontSize: 60,
             ),
           ),
@@ -41,7 +41,7 @@ class UpperComponant extends StatelessWidget {
                 'Balance',
                 style: TextStyle(
                   fontSize: 15,
-                  color: appBlackColor,
+                  color: appBlackTextColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),

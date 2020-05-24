@@ -12,6 +12,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     return Scaffold(
       backgroundColor: appWhiteColor,
       appBar: AppBar(
+        backgroundColor: appWhiteColor,
         centerTitle: true,
         iconTheme: IconThemeData(
           color: appBlackColor,

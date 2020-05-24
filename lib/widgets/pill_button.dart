@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 class PillButton extends StatelessWidget {
+  final String route;
   final String name;
   const PillButton({
     Key key,
     this.name,
+    this.route,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, 'homepage'),
+      onTap: () => Navigator.pushNamed(context, route),
       child: Container(
         height: 50,
         width: 180,

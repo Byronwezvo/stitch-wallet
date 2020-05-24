@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/create_account_screen.dart';
+import 'package:stitchwallert/screens/generate_otp_screen.dart';
 import 'package:stitchwallert/screens/history_screen.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/log_in_screen.dart';
@@ -12,10 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Stitch Wallet',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: appWhiteColor,
+        primaryColor: appRedColor,
       ),
       home: LogInScreen(),
       routes: {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         'notifications': (BuildContext ctx) => NotificationsScreen(),
         'history': (BuildContext ctx) => HistoryScreen(),
         'createAccount': (BuildContext ctx) => CreateAccount(),
+        'generateotp': (BuildContext ctx) => GenerateOTPScreen(),
       },
     );
   }

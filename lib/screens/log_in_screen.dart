@@ -47,6 +47,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                   PillButton(
                     name: 'Log In',
+                    // TODO : call the api for loggin user in
                   ),
                   SizedBox(
                     height: 20,

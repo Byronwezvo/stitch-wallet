@@ -18,6 +18,13 @@ class InputField extends StatelessWidget {
               decoration: BoxDecoration(
                 color: appWhiteColor,
                 borderRadius: BorderRadius.circular(5),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 3,
+                    color: appdarkShadowColor,
+                    offset: Offset(1, 1),
+                  ),
+                ],
               ),
             ),
             Padding(

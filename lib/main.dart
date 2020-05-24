@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         'notifications': (BuildContext ctx) => NotificationsScreen(),
         'history': (BuildContext ctx) => HistoryScreen(),
         'createAccount': (BuildContext ctx) => CreateAccount(),
+        'login': (BuildContext ctx) => LogInScreen(),
         'generateotp': (BuildContext ctx) => GenerateOTPScreen(),
       },
     );

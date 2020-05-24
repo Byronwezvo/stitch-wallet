@@ -24,7 +24,7 @@ class DrawerTileLogOut extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: appWhiteColor,
+          color: appBlackColor,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,

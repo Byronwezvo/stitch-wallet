@@ -16,11 +16,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
         title: Text(
           'History',
           style: TextStyle(
-            color: appBlackColor,
+            color: appBlackTextColor,
           ),
         ),
         iconTheme: IconThemeData(
-          color: appBlackColor,
+          color: appBlackTextColor,
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:stitchwallert/screens/history_screen.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/log_in_screen.dart';
 import 'package:stitchwallert/screens/notifications_screen.dart';
+import 'package:stitchwallert/screens/splash_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 void main() => runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: appRedColor,
       ),
-      home: LogInScreen(),
+      home: SplashScreen(),
       routes: {
         'homepage': (BuildContext ctx) => HomePage(),
         'notifications': (BuildContext ctx) => NotificationsScreen(),

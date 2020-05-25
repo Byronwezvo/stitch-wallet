@@ -25,11 +25,17 @@ class _LogInScreenState extends State<LogInScreen> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: size.height / 6,
+                    height: size.height / 8,
                   ),
                   SizedBox(
                     height: size.width / 2,
-                    child: Image.asset('assets/images/appname.png'),
+                    child: Image.asset(
+                      'assets/images/appicon.png',
+                      height: size.height / 2,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
                   ),
                   InputField(
                     hintText: 'Mobile Number',

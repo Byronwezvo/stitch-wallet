@@ -15,7 +15,7 @@ class UpperComponant extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: appWhiteColor,
+      color: appColorBlack,
       height: size.height / 2 - 41,
       width: size.width,
       child: Column(
@@ -25,13 +25,13 @@ class UpperComponant extends StatelessWidget {
             amount,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              letterSpacing: 1,
-              color: appBlackTextColor,
+              fontFamily: 'Nova',
+              color: appColorPeach,
               fontSize: 60,
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 25,
           ),
           Container(
             height: 30,
@@ -41,13 +41,13 @@ class UpperComponant extends StatelessWidget {
                 'Balance',
                 style: TextStyle(
                   fontSize: 15,
-                  color: appBlackTextColor,
+                  color: appColorPeach,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             decoration: BoxDecoration(
-              color: appRedColor,
+              color: appColorKhaki,
               boxShadow: [
                 BoxShadow(
                   blurRadius: 3,
@@ -59,7 +59,7 @@ class UpperComponant extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 60,
+            height: 75,
           ),
           NotificationsBar(size: size)
         ],

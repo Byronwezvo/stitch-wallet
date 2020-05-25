@@ -14,7 +14,7 @@ class NotificationsBar extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, 'notifications'),
       child: Container(
-        color: appRedColor,
+        color: appColorKhaki,
         height: 40,
         child: Row(
           children: <Widget>[
@@ -23,8 +23,8 @@ class NotificationsBar extends StatelessWidget {
               child: Text(
                 'Notifications',
                 style: TextStyle(
-                  color: appBlackTextColor,
-                  fontWeight: FontWeight.bold,
+                  color: appColorPeach,
+                  fontFamily: 'Nova',
                 ),
               ),
             ),

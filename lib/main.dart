@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Stitch Wallet',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: appRedColor,
+        primaryColor: appColorMaroon,
       ),
       home: SplashScreen(),
       routes: {

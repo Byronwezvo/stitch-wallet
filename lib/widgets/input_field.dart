@@ -16,7 +16,7 @@ class InputField extends StatelessWidget {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                color: appWhiteColor,
+                color: appColorKhaki,
                 borderRadius: BorderRadius.circular(5),
                 boxShadow: [
                   BoxShadow(
@@ -34,11 +34,10 @@ class InputField extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: hintText,
                   hintStyle: TextStyle(
-                    fontSize: 15,
-                    letterSpacing: 1,
-                    color: appRedColor,
+                    fontSize: 13,
+                    fontFamily: 'Nova',
+                    color: appColorPeach,
                   ),
-                  fillColor: appWhiteColor,
                   border: InputBorder.none,
                 ),
               ),

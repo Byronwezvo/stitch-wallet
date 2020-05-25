@@ -17,8 +17,9 @@ class ClickableText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: appRedColor,
-          fontWeight: FontWeight.w600,
+          color: appColorMaroon,
+          fontSize: 15,
+          fontFamily: 'Nova',
         ),
       ),
     );

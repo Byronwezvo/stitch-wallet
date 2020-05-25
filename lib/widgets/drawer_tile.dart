@@ -19,7 +19,7 @@ class DrawerTile extends StatelessWidget {
       child: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: appBlackColor,
+          color: appColorBlack,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -28,7 +28,7 @@ class DrawerTile extends StatelessWidget {
               width: size.width / 8,
               child: Center(
                 child: Dot(
-                  color: appRedColor,
+                  color: appColorMaroon,
                 ),
               ),
             ),
@@ -39,10 +39,9 @@ class DrawerTile extends StatelessWidget {
                 child: Text(
                   name,
                   style: TextStyle(
-                    fontSize: 18,
-                    color: appRedColor,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 1,
+                    fontSize: 15,
+                    color: appColorPeach,
+                    fontFamily: 'Nova',
                   ),
                 ),
               ),

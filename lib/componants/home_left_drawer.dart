@@ -14,13 +14,13 @@ class LeftDrawer extends StatelessWidget {
     return Drawer(
       semanticLabel: 'Options Drawer',
       child: Container(
-        color: appBlackColor,
+        color: appColorBlack,
         child: ListView(
           padding: EdgeInsets.all(0),
           children: <Widget>[
             Container(
               height: size.height / 2,
-              color: appRedColor,
+              color: appColorMaroon,
             ),
             // TODO : update routes here
             DrawerTile(

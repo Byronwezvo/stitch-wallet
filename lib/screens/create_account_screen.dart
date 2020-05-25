@@ -16,32 +16,35 @@ class _CreateAccountState extends State<CreateAccount> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: appBlackColor,
+        backgroundColor: appColorBlack,
+        elevation: 0,
         iconTheme: IconThemeData(
-          color: appRedColor,
+          color: appColorPeach,
         ),
         title: Text(
           'Create a new Account',
           style: TextStyle(
-            color: appRedColor,
+            color: appColorPeach,
+            fontFamily: 'Nova',
           ),
         ),
       ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: appBlackColor,
+        color: appColorBlack,
         child: SingleChildScrollView(
           child: SafeArea(
             child: Center(
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: size.height / 20,
+                    height: size.height / 500,
                   ),
-                  SizedBox(
-                    height: size.width / 2,
-                    child: Image.asset('assets/images/appname.png'),
+                  Image.asset(
+                    'assets/images/appnametextonly.png',
+                    height: (size.height / 3) + 50,
+                    fit: BoxFit.fill,
                   ),
                   InputField(
                     hintText: 'Mobile Number',

@@ -11,16 +11,16 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: appWhiteColor,
+        backgroundColor: appColorBlack,
         centerTitle: true,
         title: Text(
           'History',
           style: TextStyle(
-            color: appBlackTextColor,
+            color: appColorPeach,
           ),
         ),
         iconTheme: IconThemeData(
-          color: appBlackTextColor,
+          color: appColorPeach,
         ),
       ),
     );

@@ -14,18 +14,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: appBlackColor,
+      backgroundColor: appColorBlack,
       appBar: AppBar(
-        backgroundColor: appWhiteColor,
+        backgroundColor: appColorBlack,
+        elevation: 0,
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: appBlackTextColor,
+          color: appColorPeach,
           size: 1,
         ),
         title: Text(
           'Home',
           style: TextStyle(
-            color: appBlackTextColor,
+            color: appColorPeach,
+            fontFamily: 'Nova',
           ),
         ),
       ),

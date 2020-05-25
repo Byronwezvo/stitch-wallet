@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 5),
+      Duration(seconds: 3),
       () {
         Navigator.pushReplacementNamed(context, 'login');
       },
@@ -33,11 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
             Center(
               child: Image.asset(
                 'assets/images/appicon.png',
-                height: size.height / 2,
+                height: size.height / 3,
               ),
             ),
             SizedBox(
-              height: size.height / 4,
+              height: size.height / 3,
             ),
             Center(
               child: Text(

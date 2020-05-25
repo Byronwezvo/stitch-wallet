@@ -18,21 +18,16 @@ class _LogInScreenState extends State<LogInScreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: appBlackColor,
+        color: appColorBlack,
         child: SingleChildScrollView(
           child: SafeArea(
             child: Center(
               child: Column(
                 children: <Widget>[
-                  SizedBox(
-                    height: size.height / 8,
-                  ),
-                  SizedBox(
-                    height: size.width / 2,
-                    child: Image.asset(
-                      'assets/images/appicon.png',
-                      height: size.height / 2,
-                    ),
+                  Image.asset(
+                    'assets/images/appnametextonly.png',
+                    height: (size.height / 3) + 50,
+                    fit: BoxFit.fill,
                   ),
                   SizedBox(
                     height: 20,
@@ -57,7 +52,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     // TODO : call the api for login user in
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   ClickableText(
                     text: 'Create Account',

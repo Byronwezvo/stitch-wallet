@@ -19,7 +19,7 @@ class Tile extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, 'history'),
       child: Container(
-        color: appBlackColor,
+        color: appColorBlack,
         height: 50,
         width: size.width,
         child: Row(
@@ -28,7 +28,7 @@ class Tile extends StatelessWidget {
             Container(
               width: size.width / 8,
               child: Dot(
-                color: appRedColor,
+                color: appColorMaroon,
               ),
             ),
             SizedBox(
@@ -42,8 +42,8 @@ class Tile extends StatelessWidget {
                       message,
                       style: TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: appWhiteColor,
+                        fontFamily: 'Nova',
+                        color: appColorPeach,
                         letterSpacing: 1,
                       ),
                     ),
@@ -51,18 +51,18 @@ class Tile extends StatelessWidget {
                 ],
               ),
               height: 50,
-              width: size.width - 150,
+              width: size.width - 140,
             ),
             Container(
-              width: (size.width / 5) + 5,
+              width: (size.width / 5) + 10,
               child: Center(
                 child: Text(
                   amount,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: appWhiteColor,
+                    color: appColorPeach,
                     fontSize: 15,
-                    letterSpacing: 1,
+                    fontFamily: 'Nova',
                   ),
                 ),
               ),

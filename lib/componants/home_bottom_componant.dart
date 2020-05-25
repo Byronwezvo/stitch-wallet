@@ -18,37 +18,47 @@ class BottomComponant extends StatelessWidget {
         children: <Widget>[
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
+            amount: '\$20000.00',
+          ),
+          Tile(
+            size: size,
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
           Tile(
             size: size,
-            message: 'You send money to 079845287',
+            message: 'Sent money - 079845287',
+            amount: '\$20.00',
+          ),
+          Tile(
+            size: size,
+            message: 'Sent money - 079845287',
             amount: '\$20.00',
           ),
         ],

@@ -22,13 +22,13 @@ class PillButton extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(
                 left: 20,
-                right: 30,
+                right: 25,
               ),
               child: Container(
                 height: 15,
                 width: 15,
                 decoration: BoxDecoration(
-                  color: appRedColor,
+                  color: appColorMaroon,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
@@ -43,16 +43,15 @@ class PillButton extends StatelessWidget {
             Text(
               name,
               style: TextStyle(
-                color: appRedColor,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
+                color: appColorMaroon,
+                fontFamily: 'Nova',
                 fontSize: 18,
               ),
             ),
           ],
         ),
         decoration: BoxDecoration(
-          color: appWhiteColor,
+          color: appColorOrange,
           boxShadow: [
             BoxShadow(
               blurRadius: 3,

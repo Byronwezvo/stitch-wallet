@@ -4,6 +4,7 @@ import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
 import 'package:stitchwallert/widgets/pill_button.dart';
+import 'package:stitchwallert/widgets/pill_button_login.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   SizedBox(
                     height: 50,
                   ),
-                  PillButton(
+                  PillButtonLogin(
                     route: 'homepage',
                     name: 'Log In',
                     // TODO : call the api for login user in

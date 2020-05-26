@@ -27,7 +27,7 @@ class UpperComponant extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontFamily: 'Nova',
               color: appColorPeach,
-              fontSize: 60,
+              fontSize: 45,
             ),
           ),
           SizedBox(

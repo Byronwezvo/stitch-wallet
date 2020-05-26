@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
-class PillButton extends StatelessWidget {
+class PillButtonLogin extends StatelessWidget {
   final String route;
   final String name;
-  const PillButton({
+  const PillButtonLogin({
     Key key,
     this.name,
     this.route,
@@ -13,7 +13,7 @@ class PillButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, route),
+      onTap: () => Navigator.pushReplacementNamed(context, route),
       child: Container(
         height: 40,
         width: 150,

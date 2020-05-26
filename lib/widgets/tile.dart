@@ -23,50 +23,58 @@ class Tile extends StatelessWidget {
         height: 50,
         width: size.width,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Container(
-              width: size.width / 8,
-              child: Dot(
-                color: appColorMaroon,
-              ),
+            Row(
+              children: <Widget>[
+                Container(
+                  //color: appColorMaroon,
+                  width: 40,
+                  child: Dot(
+                    color: appColorMaroon,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  //color: appColorKhaki,
+                  width: size.height / 3,
+                  child: Text(
+                    message,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Nova',
+                      color: appColorPeach,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              width: 10,
-            ),
             Container(
-              child: Row(
-                children: <Widget>[
-                  Center(
-                    child: Text(
-                      message,
+              //color: appColorPeach,
+              width: size.height / 6,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      amount,
                       style: TextStyle(
                         fontSize: 15,
                         fontFamily: 'Nova',
-                        color: appColorPeach,
+                        fontWeight: FontWeight.bold,
+                        color: appColorMaroon,
                         letterSpacing: 1,
                       ),
                     ),
-                  ),
-                ],
-              ),
-              height: 50,
-              width: size.width - 140,
-            ),
-            Container(
-              width: (size.width / 5) + 10,
-              child: Center(
-                child: Text(
-                  amount,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: appColorPeach,
-                    fontSize: 15,
-                    fontFamily: 'Nova',
-                  ),
+                  ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

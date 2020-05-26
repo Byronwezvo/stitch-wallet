@@ -1,0 +1,25 @@
+ Container(
+              width: size.width / 8,
+              child: Dot(
+                color: appColorMaroon,
+              ),
+            ),
+            Text(
+              message,
+              style: TextStyle(
+                fontSize: 13,
+                fontFamily: 'Nova',
+                color: appColorPeach,
+                letterSpacing: 1,
+              ),
+            ),
+            Text(
+              amount,
+              style: TextStyle(
+                fontSize: 15,
+                fontFamily: 'Nova',
+                fontWeight: FontWeight.bold,
+                color: appColorMaroon,
+                letterSpacing: 1,
+              ),
+            ),

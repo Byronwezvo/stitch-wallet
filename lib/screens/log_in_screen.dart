@@ -126,14 +126,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     FlatButton(
                       color: appColorMaroon,
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => HomePage(
-                              data: [1, 2, 3],
-                            ),
-                          ),
-                        );
+                        print(mobileNumber + password);
                       },
                       child: Text('Bypass-login'),
                     )

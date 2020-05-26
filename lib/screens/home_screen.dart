@@ -29,8 +29,8 @@ class _HomePageState extends State<HomePage> {
       onWillPop: () => buildShowDialog(context),
       child: Scaffold(
         backgroundColor: appColorBlack,
-        floatingActionButton:
-            FloatingActionButton(onPressed: () => print(localData)),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () => print(localData[0]['user_name'])),
         appBar: AppBar(
           backgroundColor: appColorBlack,
           elevation: 0,

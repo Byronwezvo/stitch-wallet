@@ -40,7 +40,7 @@ class LeftDrawer extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      'The perfect digital wallet.',
+                      'The perfect wallet.',
                       style: TextStyle(
                         fontFamily: 'Nova',
                         fontSize: 15,

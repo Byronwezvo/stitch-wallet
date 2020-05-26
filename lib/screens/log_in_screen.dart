@@ -1,9 +1,10 @@
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
-import 'package:stitchwallert/widgets/pill_button.dart';
 import 'package:stitchwallert/widgets/pill_button_login.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -12,6 +13,36 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
+  int status = 0;
+  String mobileNumber = '';
+  String password = '';
+
+  logUserIn() async {
+    if (mobileNumber == '' && password == '') {
+      print('show error snack');
+    } else {
+      var url = 'http://192.168.1.100:3000/login/$mobileNumber/$password';
+      var response = await http.post(Uri.encodeFull(url));
+      setState(() {
+        status = 0;
+        status = response.statusCode;
+      });
+      print(status);
+    }
+  }
+
+  setMobileNumber(String mobileInput) {
+    setState(() {
+      mobileNumber = mobileInput;
+    });
+  }
+
+  setPassword(String passwordInput) {
+    setState(() {
+      password = passwordInput;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -38,6 +69,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     InputField(
                       hintText: 'Mobile Number',
                       hiddenText: false,
+                      textInput: (String mobile) => setMobileNumber(mobile),
                     ),
                     SizedBox(
                       height: 25,
@@ -45,6 +77,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     InputField(
                       hintText: 'Password',
                       hiddenText: true,
+                      textInput: (String password) => setPassword(password),
                     ),
                     SizedBox(
                       height: 50,
@@ -52,6 +85,21 @@ class _LogInScreenState extends State<LogInScreen> {
                     PillButtonLogin(
                       route: 'homepage',
                       name: 'Log In',
+                      onclick: () {
+                        logUserIn();
+                        switch (status) {
+                          case 200:
+                            Navigator.pushReplacementNamed(context, 'homepage');
+                            break;
+
+                          case 400:
+                            print('User made a typo - snack here');
+                            break;
+
+                          default:
+                            print('generic error, mybe not connected');
+                        }
+                      },
                       // TODO : call the api for login user in
                     ),
                     SizedBox(
@@ -61,6 +109,13 @@ class _LogInScreenState extends State<LogInScreen> {
                       text: 'Create Account',
                       route: 'createAccount',
                     ),
+                    // TODO : Remove below button
+                    FlatButton(
+                      color: appColorMaroon,
+                      onPressed: () =>
+                          Navigator.pushReplacementNamed(context, 'homepage'),
+                      child: Text('Bypass-login'),
+                    )
                   ],
                 ),
               ),

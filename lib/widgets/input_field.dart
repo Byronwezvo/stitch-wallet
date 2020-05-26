@@ -4,7 +4,13 @@ import 'package:stitchwallert/utils/colors.dart';
 class InputField extends StatelessWidget {
   final String hintText;
   final bool hiddenText;
-  const InputField({Key key, this.hintText, this.hiddenText}) : super(key: key);
+  final Function textInput;
+  const InputField({
+    Key key,
+    this.hintText,
+    this.hiddenText,
+    this.textInput,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,7 @@ class InputField extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: TextField(
                 obscureText: hiddenText,
+                onChanged: textInput,
                 decoration: InputDecoration(
                   hintText: hintText,
                   hintStyle: TextStyle(

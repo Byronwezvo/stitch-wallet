@@ -4,16 +4,18 @@ import 'package:stitchwallert/utils/colors.dart';
 class PillButtonLogin extends StatelessWidget {
   final String route;
   final String name;
+  final Function onclick;
   const PillButtonLogin({
     Key key,
     this.name,
     this.route,
+    this.onclick,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushReplacementNamed(context, route),
+      onTap: onclick,
       child: Container(
         height: 40,
         width: 150,

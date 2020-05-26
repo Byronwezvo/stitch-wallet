@@ -5,11 +5,23 @@ import 'package:stitchwallert/componants/home_upper_componant.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
+  final List data;
+  const HomePage({
+    Key key,
+    this.data,
+  }) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List localData = [];
+
+  void initState() {
+    super.initState();
+    localData = widget.data;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,6 +29,8 @@ class _HomePageState extends State<HomePage> {
       onWillPop: () => buildShowDialog(context),
       child: Scaffold(
         backgroundColor: appColorBlack,
+        floatingActionButton:
+            FloatingActionButton(onPressed: () => print(localData)),
         appBar: AppBar(
           backgroundColor: appColorBlack,
           elevation: 0,
@@ -39,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               UpperComponant(
                 size: size,
-                amount: '\$2080.15',
+                amount: '\$${localData[0]['user_balance']}',
               ),
               BottomComponant(size: size)
             ],

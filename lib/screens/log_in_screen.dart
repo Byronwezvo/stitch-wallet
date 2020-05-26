@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
@@ -16,6 +19,7 @@ class _LogInScreenState extends State<LogInScreen> {
   int status = 0;
   String mobileNumber = '';
   String password = '';
+  List data = [];
 
   logUserIn() async {
     if (mobileNumber == '' && password == '') {
@@ -26,6 +30,7 @@ class _LogInScreenState extends State<LogInScreen> {
       setState(() {
         status = 0;
         status = response.statusCode;
+        data = json.decode(response.body);
       });
       print(status);
     }
@@ -89,7 +94,15 @@ class _LogInScreenState extends State<LogInScreen> {
                         logUserIn();
                         switch (status) {
                           case 200:
-                            Navigator.pushReplacementNamed(context, 'homepage');
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => HomePage(
+                                  data: data,
+                                ),
+                              ),
+                            );
+                            print(data[0]['user_balance']);
                             break;
 
                           case 400:
@@ -112,8 +125,16 @@ class _LogInScreenState extends State<LogInScreen> {
                     // TODO : Remove below button
                     FlatButton(
                       color: appColorMaroon,
-                      onPressed: () =>
-                          Navigator.pushReplacementNamed(context, 'homepage'),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => HomePage(
+                              data: [1, 2, 3],
+                            ),
+                          ),
+                        );
+                      },
                       child: Text('Bypass-login'),
                     )
                   ],

@@ -33,27 +33,27 @@ class BottomComponant extends StatelessWidget {
             ),
             Tile(
               size: size,
-              message: 'Sent - 0779845287',
-              amount: '\$20000',
+              message: 'Request - Cash out',
+              amount: '\$500',
             ),
             Tile(
               size: size,
-              message: 'Recieved - 0779845287',
+              message: 'Scan to Pay - Mechant',
               amount: '\$200',
             ),
             Tile(
               size: size,
-              message: 'Sent - 0779845287',
+              message: 'Cash in - Ecocash',
               amount: '\$20000',
             ),
             Tile(
               size: size,
-              message: 'Recieved - 0779845287',
+              message: 'Cash in - OneMoney',
               amount: '\$200',
             ),
             Tile(
               size: size,
-              message: 'Sent - 0779845287',
+              message: 'Cash in - Bank',
               amount: '\$20000',
             ),
             Tile(

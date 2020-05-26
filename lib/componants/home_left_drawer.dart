@@ -18,9 +18,38 @@ class LeftDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              height: size.height / 2,
-              color: appColorMaroon,
+            Stack(
+              children: <Widget>[
+                Container(
+                  height: size.height / 2,
+                  color: appColorBlack,
+                ),
+                Column(
+                  children: <Widget>[
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 50.0),
+                        child: Image.asset(
+                          'assets/images/appicon.png',
+                          height: (size.width / 2) - 20,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'The perfect digital wallet.',
+                      style: TextStyle(
+                        fontFamily: 'Nova',
+                        fontSize: 15,
+                        color: appColorPeach,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             // TODO : update routes here
             DrawerTile(

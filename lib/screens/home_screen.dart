@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           vertical: 40,
           horizontal: 30,
         ),
-        backgroundColor: appColorKhaki,
+        backgroundColor: appColorBlack,
         title: Text(
           'Warning',
           style: TextStyle(

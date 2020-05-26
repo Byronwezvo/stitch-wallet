@@ -23,43 +23,46 @@ class _LogInScreenState extends State<LogInScreen> {
         child: SingleChildScrollView(
           child: SafeArea(
             child: Center(
-              child: Column(
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/appnametextonly.png',
-                    height: (size.height / 3) + 50,
-                    fit: BoxFit.fill,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  InputField(
-                    hintText: 'Mobile Number',
-                    hiddenText: false,
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  InputField(
-                    hintText: 'Password',
-                    hiddenText: true,
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  PillButtonLogin(
-                    route: 'homepage',
-                    name: 'Log In',
-                    // TODO : call the api for login user in
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  ClickableText(
-                    text: 'Create Account',
-                    route: 'createAccount',
-                  ),
-                ],
+              child: Hero(
+                tag: 'page',
+                child: Column(
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/appnametextonly.png',
+                      height: (size.height / 3) + 50,
+                      fit: BoxFit.fill,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InputField(
+                      hintText: 'Mobile Number',
+                      hiddenText: false,
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    InputField(
+                      hintText: 'Password',
+                      hiddenText: true,
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    PillButtonLogin(
+                      route: 'homepage',
+                      name: 'Log In',
+                      // TODO : call the api for login user in
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    ClickableText(
+                      text: 'Create Account',
+                      route: 'createAccount',
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

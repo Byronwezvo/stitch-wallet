@@ -19,7 +19,7 @@ class DrawerTileLogOut extends StatelessWidget {
       onTap: () {
         // TODO : Call api for user log out
         Navigator.pop(context, main());
-        Navigator.pop(context, main());
+        Navigator.pushNamed(context, 'login');
       },
       child: Container(
         height: 60,

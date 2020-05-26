@@ -12,8 +12,10 @@ class PillButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return InkResponse(
       onTap: () => Navigator.pushNamed(context, route),
+      splashColor: appColorMaroon,
+      highlightColor: appColorMaroon,
       child: Container(
         height: 40,
         width: 150,

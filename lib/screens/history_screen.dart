@@ -10,8 +10,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: appColorBlack,
       appBar: AppBar(
         backgroundColor: appColorBlack,
+        elevation: 0,
         centerTitle: true,
         title: Text(
           'History',
@@ -23,6 +25,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
           color: appColorPeach,
         ),
       ),
+      body: null,
     );
   }
 }

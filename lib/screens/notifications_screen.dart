@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/notifications_tile.dart';
-import 'package:stitchwallert/widgets/tile.dart';
 
 class NotificationsScreen extends StatefulWidget {
   final List notifications;
@@ -28,9 +27,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: appColorBlack,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => print(notificationsList),
-      ),
       appBar: AppBar(
         backgroundColor: appColorBlack,
         centerTitle: true,
@@ -58,6 +54,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 child: NotificationsTile(
                   size: size,
                   message: '${notificationsList[i]['message']}',
+                  time: '${notificationsList[i]['date']}',
                 ),
               );
             },

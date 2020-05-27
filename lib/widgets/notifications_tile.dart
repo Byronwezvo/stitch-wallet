@@ -4,9 +4,11 @@ import 'package:stitchwallert/widgets/dot.dart';
 
 class NotificationsTile extends StatelessWidget {
   final String message;
+  final String time;
   const NotificationsTile({
     Key key,
     this.message,
+    this.time,
     @required this.size,
   }) : super(key: key);
 
@@ -14,41 +16,59 @@ class NotificationsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, 'history'),
-      child: Container(
-        color: appColorBlack,
-        height: 50,
-        width: size.width,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              //color: appColorMaroon,
-              width: 40,
-              child: Dot(
-                color: appColorMaroon,
-              ),
+    return Container(
+      color: appColorBlack,
+      height: 50,
+      width: size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            //color: appColorMaroon,
+            width: 40,
+            child: Dot(
+              color: appColorMaroon,
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Container(
-              //color: appColorKhaki,
-              width: size.height / 2,
-              child: Text(
-                message,
-                style: TextStyle(
-                  fontSize: 15,
-                  fontFamily: 'Nova',
-                  color: appColorPeach,
-                  letterSpacing: 1,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                //color: appColorKhaki,
+                width: size.height / 2,
+                child: Text(
+                  message,
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontFamily: 'Nova',
+                    color: appColorPeach,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
+              SizedBox(
+                height: 3,
+              ),
+              Container(
+                //color: appColorKhaki,
+                width: size.height / 2,
+                child: Text(
+                  time,
+                  style: TextStyle(
+                    fontSize: 8,
+                    fontFamily: 'Nova',
+                    color: appColorPeach,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

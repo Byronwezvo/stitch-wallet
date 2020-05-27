@@ -74,7 +74,7 @@ class LeftDrawer extends StatelessWidget {
             ),
             DrawerTile(
               name: 'History',
-              route: '',
+              route: 'history',
             ),
             DrawerTile(
               name: 'Settings',

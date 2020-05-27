@@ -21,27 +21,26 @@ class _LogInScreenState extends State<LogInScreen> {
   String password = '';
   List data = [];
 
-  logUserIn() async {
+// ::: Make Api call to Monkey Api
+  logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
       print('show error snack');
     } else {
-      var url = 'http://192.168.1.100:3000/login/$mobileNumber/$password';
+      var url = 'http://192.168.1.100:3000/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
-      setState(() {
-        status = 0;
-        status = response.statusCode;
-        data = json.decode(response.body);
-      });
-      print(status);
+      status = response.statusCode;
+      data = json.decode(response.body);
     }
   }
 
+  // ::: Set mobile text input value to local variable
   setMobileNumber(String mobileInput) {
     setState(() {
       mobileNumber = mobileInput;
     });
   }
 
+  // ::: Set mobile text input value to local variable
   setPassword(String passwordInput) {
     setState(() {
       password = passwordInput;
@@ -91,7 +90,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       route: 'homepage',
                       name: 'Log In',
                       onclick: () {
-                        logUserIn();
+                        logUserIn(mobileNumber, password);
                         switch (status) {
                           case 200:
                             Navigator.pushReplacement(
@@ -122,14 +121,6 @@ class _LogInScreenState extends State<LogInScreen> {
                       text: 'Create Account',
                       route: 'createAccount',
                     ),
-                    // TODO : Remove below button
-                    FlatButton(
-                      color: appColorMaroon,
-                      onPressed: () {
-                        print(mobileNumber + password);
-                      },
-                      child: Text('Bypass-login'),
-                    )
                   ],
                 ),
               ),

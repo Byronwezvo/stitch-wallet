@@ -26,7 +26,7 @@ class _LogInScreenState extends State<LogInScreen> {
     if (mobileNumber == '' && password == '') {
       print('show error snack');
     } else {
-      var url = 'http://192.168.1.100:3000/login/$inputMobile/$inputPassword';
+      var url = 'http://192.168.43.21:3000/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
       status = response.statusCode;
       data = json.decode(response.body);

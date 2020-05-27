@@ -40,40 +40,34 @@ class Tile extends StatelessWidget {
                 ),
                 Container(
                   //color: appColorKhaki,
-                  width: size.height / 3,
+                  //width: size.width / 2,
                   child: Text(
                     message,
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: size.height / 50,
                       fontFamily: 'Nova',
                       color: appColorPeach,
                       letterSpacing: 1,
                     ),
                   ),
                 ),
-              ],
-            ),
-            Container(
-              //color: appColorPeach,
-              width: size.height / 6,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Text(
-                      amount,
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: 'Nova',
-                        fontWeight: FontWeight.bold,
-                        color: appColorMaroon,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ],
+                SizedBox(
+                  width: 5,
                 ),
-              ),
+                Container(
+                  //color: appColorKhaki,
+                  //width: size.width / 2,
+                  child: Text(
+                    amount,
+                    style: TextStyle(
+                      fontSize: size.height / 50,
+                      fontFamily: 'Nova',
+                      color: appColorMaroon,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

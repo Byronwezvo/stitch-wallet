@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: appColorBlack,
         floatingActionButton: FloatingActionButton(
-            onPressed: () => print(localData[0]['user_name'])),
+            onPressed: () => print(localData[0]['user_notifications'])),
         appBar: AppBar(
           backgroundColor: appColorBlack,
           elevation: 0,
@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
               UpperComponant(
                 size: size,
                 amount: '\$${localData[0]['user_balance']}',
+                notifications: localData[0]['user_notifications'],
               ),
               BottomComponant(size: size)
             ],

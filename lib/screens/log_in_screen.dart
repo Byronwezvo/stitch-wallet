@@ -91,6 +91,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       name: 'Log In',
                       onclick: () {
                         logUserIn(mobileNumber, password);
+                        logUserIn(mobileNumber, password);
                         switch (status) {
                           case 200:
                             Navigator.pushReplacement(

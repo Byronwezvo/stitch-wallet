@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/screens/notifications_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 class NotificationsBar extends StatelessWidget {
   const NotificationsBar({
     Key key,
+    @required this.notifications,
     @required this.size,
   }) : super(key: key);
 
   final Size size;
+  final List notifications;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, 'notifications'),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext ctx) => NotificationsScreen(
+            notifications: notifications,
+          ),
+        ),
+      ),
       child: Container(
         color: appColorKhaki,
         height: 40,

@@ -4,9 +4,11 @@ import 'package:stitchwallert/widgets/notifications_bar.dart';
 
 class UpperComponant extends StatelessWidget {
   final String amount;
+  final List notifications;
   const UpperComponant({
     Key key,
     this.amount,
+    this.notifications,
     @required this.size,
   }) : super(key: key);
 
@@ -61,7 +63,10 @@ class UpperComponant extends StatelessWidget {
           SizedBox(
             height: 75,
           ),
-          NotificationsBar(size: size)
+          NotificationsBar(
+            size: size,
+            notifications: notifications,
+          )
         ],
       ),
     );

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
-class PillButton extends StatelessWidget {
+class PillButtonLogin extends StatelessWidget {
   final String route;
   final String name;
-  const PillButton({
+  final Function onclick;
+  const PillButtonLogin({
     Key key,
     this.name,
     this.route,
+    this.onclick,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkResponse(
-      onTap: () => Navigator.pushNamed(context, route),
-      splashColor: appColorMaroon,
-      highlightColor: appColorMaroon,
+    return InkWell(
+      onTap: onclick,
       child: Container(
         height: 40,
         width: 150,

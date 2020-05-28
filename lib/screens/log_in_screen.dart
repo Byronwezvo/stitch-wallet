@@ -24,9 +24,9 @@ class _LogInScreenState extends State<LogInScreen> {
 // ::: Make Api call to Monkey Api
   logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
-      print('show error snack');
+      print('show error snack - null input');
     } else {
-      var url = 'http://192.168.43.21:3000/login/$inputMobile/$inputPassword';
+      var url = 'http://192.168.1.100:3000/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
       status = response.statusCode;
       data = json.decode(response.body);
@@ -110,10 +110,10 @@ class _LogInScreenState extends State<LogInScreen> {
                             break;
 
                           default:
+                            logUserIn(mobileNumber, password);
                             print('generic error, mybe not connected');
                         }
                       },
-                      // TODO : call the api for login user in
                     ),
                     SizedBox(
                       height: 30,
@@ -121,6 +121,23 @@ class _LogInScreenState extends State<LogInScreen> {
                     ClickableText(
                       text: 'Create Account',
                       route: 'createAccount',
+                    ),
+                    Material(
+                      color: appColorKhaki,
+                      child: InkWell(
+                        onTap: () => print('object'),
+                        splashColor: Colors.red,
+                        focusColor: appColorPeach,
+                        child: Container(
+                          //color: appColorGrey,
+                          decoration: BoxDecoration(),
+                          height: 50,
+                          width: 200,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                      ),
                     ),
                   ],
                 ),

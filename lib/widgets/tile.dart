@@ -16,10 +16,9 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () => Navigator.pushNamed(context, 'history'),
       child: Container(
-        color: appColorBlack,
         height: 50,
         width: size.width,
         child: Row(

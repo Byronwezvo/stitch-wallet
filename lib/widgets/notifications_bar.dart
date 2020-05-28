@@ -14,31 +14,33 @@ class NotificationsBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext ctx) => NotificationsScreen(
-            notifications: notifications,
+    return Material(
+      color: appColorKhaki,
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext ctx) => NotificationsScreen(
+              notifications: notifications,
+            ),
           ),
         ),
-      ),
-      child: Container(
-        color: appColorKhaki,
-        height: 40,
-        child: Row(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: Text(
-                'Notifications',
-                style: TextStyle(
-                  color: appColorPeach,
-                  fontFamily: 'Nova',
+        child: Container(
+          height: 40,
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Text(
+                  'Notifications',
+                  style: TextStyle(
+                    color: appColorPeach,
+                    fontFamily: 'Nova',
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

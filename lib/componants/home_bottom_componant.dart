@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/utils/overwrite_glow_color.dart';
 import 'package:stitchwallert/widgets/tile.dart';
 
 class BottomComponant extends StatelessWidget {
@@ -14,11 +16,8 @@ class BottomComponant extends StatelessWidget {
     return SizedBox(
       height: size.height / 2 - 41,
       // TODO : Replace with a listview builder
-      child: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overScroll) {
-          overScroll.disallowGlow();
-          return false;
-        },
+      child: GlowingOverscrollColorChanger(
+        color: appColorOrange,
         child: ListView(
           children: <Widget>[
             Tile(

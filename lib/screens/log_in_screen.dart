@@ -51,95 +51,84 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: appColorBlack,
-        child: SingleChildScrollView(
-          child: SafeArea(
-            child: Center(
-              child: Hero(
-                tag: 'page',
-                child: Column(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/images/appnametextonly.png',
-                      height: (size.height / 3) + 50,
-                      fit: BoxFit.fill,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    InputField(
-                      hintText: 'Mobile Number',
-                      hiddenText: false,
-                      textInput: (String mobile) => setMobileNumber(mobile),
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    InputField(
-                      hintText: 'Password',
-                      hiddenText: true,
-                      textInput: (String password) => setPassword(password),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    PillButtonLogin(
-                      route: 'homepage',
-                      name: 'Log In',
-                      onclick: () {
-                        logUserIn(mobileNumber, password);
-                        logUserIn(mobileNumber, password);
-                        switch (status) {
-                          case 200:
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) => HomePage(
-                                  data: data,
-                                ),
-                              ),
-                            );
-                            print(data[0]['user_balance']);
-                            break;
-
-                          case 400:
-                            print('User made a typo - snack here');
-                            break;
-
-                          default:
-                            logUserIn(mobileNumber, password);
-                            print('generic error, mybe not connected');
-                        }
-                      },
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    ClickableText(
-                      text: 'Create Account',
-                      route: 'createAccount',
-                    ),
-                    Material(
-                      color: appColorKhaki,
-                      child: InkWell(
-                        onTap: () => print('object'),
-                        splashColor: Colors.red,
-                        focusColor: appColorPeach,
-                        child: Container(
-                          //color: appColorGrey,
-                          decoration: BoxDecoration(),
-                          height: 50,
-                          width: 200,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(50),
-                        ),
+      body: NotificationListener<OverscrollIndicatorNotification>(
+        onNotification: (OverscrollIndicatorNotification overScroll) {
+          overScroll.disallowGlow();
+          return false;
+        },
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: appColorBlack,
+          child: SingleChildScrollView(
+            child: SafeArea(
+              child: Center(
+                child: Hero(
+                  tag: 'page',
+                  child: Column(
+                    children: <Widget>[
+                      Image.asset(
+                        'assets/images/appnametextonly.png',
+                        height: (size.height / 3) + 50,
+                        fit: BoxFit.fill,
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 20,
+                      ),
+                      InputField(
+                        hintText: 'Mobile Number',
+                        hiddenText: false,
+                        textInput: (String mobile) => setMobileNumber(mobile),
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      InputField(
+                        hintText: 'Password',
+                        hiddenText: true,
+                        textInput: (String password) => setPassword(password),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      PillButtonLogin(
+                        route: 'homepage',
+                        name: 'Log In',
+                        onclick: () {
+                          logUserIn(mobileNumber, password);
+                          logUserIn(mobileNumber, password);
+                          switch (status) {
+                            case 200:
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => HomePage(
+                                    data: data,
+                                  ),
+                                ),
+                              );
+                              print(data[0]['user_balance']);
+                              break;
+
+                            case 400:
+                              print('User made a typo - snack here');
+                              break;
+
+                            default:
+                              logUserIn(mobileNumber, password);
+                              print('generic error, mybe not connected');
+                          }
+                        },
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      ClickableText(
+                        text: 'Create Account',
+                        route: 'createAccount',
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

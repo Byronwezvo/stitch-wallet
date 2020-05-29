@@ -25,7 +25,7 @@ class _LogInScreenState extends State<LogInScreen> {
 // ::: Make Api call to Monkey Api
   logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
-      print('show error snack - null input');
+      // ::: Show Error to user when no input is given
       return showDialog<bool>(
         context: context,
         builder: (context) => ErrorDialog(

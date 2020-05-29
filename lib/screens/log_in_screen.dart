@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
+import 'package:stitchwallert/widgets/error_dialog.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
 import 'package:stitchwallert/widgets/pill_button_login.dart';
 
@@ -25,6 +26,12 @@ class _LogInScreenState extends State<LogInScreen> {
   logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
       print('show error snack - null input');
+      return showDialog<bool>(
+        context: context,
+        builder: (context) => ErrorDialog(
+          errorMessage: 'Please enter your mobile number and password',
+        ),
+      );
     } else {
       var url = 'http://192.168.1.100:3000/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
@@ -96,7 +103,6 @@ class _LogInScreenState extends State<LogInScreen> {
                         name: 'Log In',
                         onclick: () {
                           logUserIn(mobileNumber, password);
-                          logUserIn(mobileNumber, password);
                           switch (status) {
                             case 200:
                               Navigator.pushReplacement(
@@ -115,8 +121,8 @@ class _LogInScreenState extends State<LogInScreen> {
                               break;
 
                             default:
-                              logUserIn(mobileNumber, password);
-                              print('generic error, mybe not connected');
+                              print('generic error, mybe not connected...');
+                              break;
                           }
                         },
                       ),

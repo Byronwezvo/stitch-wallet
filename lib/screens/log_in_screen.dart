@@ -121,10 +121,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       PillButtonLogin(
                         route: 'homepage',
                         name: 'Log In',
-                        onclick: () {
-                          print('User Clicked');
-                          logUserIn(mobileNumber, password);
-                        },
+                        onclick: () => null,
                       ),
                       SizedBox(
                         height: 30,

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 3),
+      Duration(seconds: 5),
       () {
         Navigator.pushReplacementNamed(context, 'login');
       },
@@ -38,6 +39,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(
               height: size.height / 3,
+              child: SpinKitChasingDots(
+                color: appColorOrange,
+                size: 40.0,
+              ),
             ),
             Center(
               child: Text(

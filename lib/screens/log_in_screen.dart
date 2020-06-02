@@ -36,34 +36,24 @@ class _LogInScreenState extends State<LogInScreen> {
     } else {
       var url = 'http://$monkeyapi/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
-      status = response.statusCode;
-      data = json.decode(response.body);
+      //print(response.body);
+      validateLogIn(response.statusCode, json.decode(response.body));
     }
   }
 
-  checkStatusCode(statusCode) {
-    print("statusCode");
-    switch (statusCode) {
-      case 200:
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (BuildContext context) => HomePage(
-              data: data,
-              mobile: mobileNumber,
-            ),
+  validateLogIn(statusCode, data) {
+    print(statusCode.runtimeType);
+    print(data);
+
+    if (statusCode == 200) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext ctx) => HomePage(
+            data: data,
           ),
-        );
-        print(data[0]['user_balance']);
-        break;
-
-      case 400:
-        print('User made a typo - snack here');
-        break;
-
-      default:
-        print('generic error, mybe not connected. works');
-        break;
+        ),
+      );
     }
   }
 
@@ -134,36 +124,6 @@ class _LogInScreenState extends State<LogInScreen> {
                         onclick: () {
                           print('User Clicked');
                           logUserIn(mobileNumber, password);
-                          switch (status) {
-                            case 0:
-                              // im not so sure how to fix this
-                              break;
-
-                            case 200:
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) => HomePage(
-                                    data: data,
-                                  ),
-                                ),
-                              );
-                              print(data[0]['user_balance']);
-                              break;
-
-                            case 400:
-                              showDialog(
-                                context: context,
-                                builder: (context) => ErrorDialog(
-                                  errorMessage: 'You entered invalid Data',
-                                ),
-                              );
-                              break;
-
-                            default:
-                              print('generic error, mybe not connected...');
-                              break;
-                          }
                         },
                       ),
                       SizedBox(

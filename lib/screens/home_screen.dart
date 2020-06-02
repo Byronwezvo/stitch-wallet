@@ -6,9 +6,11 @@ import 'package:stitchwallert/utils/colors.dart';
 
 class HomePage extends StatefulWidget {
   final List data;
+  final String mobile;
   const HomePage({
     Key key,
     this.data,
+    this.mobile,
   }) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
@@ -16,10 +18,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List localData = [];
+  String mobile;
 
   void initState() {
     super.initState();
     localData = widget.data;
+    mobile = widget.mobile;
   }
 
   @override
@@ -30,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: appColorBlack,
         // floatingActionButton: FloatingActionButton(
-        //     onPressed: () => print(localData[0]['user_notifications'])),
+        //     onPressed: () => print(localData[0]['user_mobile'])),
         appBar: AppBar(
           backgroundColor: appColorBlack,
           elevation: 0,
@@ -47,7 +51,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        drawer: LeftDrawer(),
+        drawer: LeftDrawer(
+          mobile: localData[0]['user_mobile'],
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[

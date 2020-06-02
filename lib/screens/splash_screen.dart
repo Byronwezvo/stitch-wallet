@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Center(
               child: Image.asset(
                 'assets/images/appicon.png',
-                height: size.height / 3,
+                height: size.height / 6,
               ),
             ),
             SizedBox(

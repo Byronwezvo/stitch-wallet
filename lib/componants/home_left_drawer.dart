@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:stitchwallert/screens/send_money_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/utils/overwrite_glow_color.dart';
 import 'package:stitchwallert/widgets/drawer_tile.dart';
 import 'package:stitchwallert/widgets/drawer_tile_log_out.dart';
 
 class LeftDrawer extends StatelessWidget {
+  final String mobile;
   const LeftDrawer({
     Key key,
+    this.mobile,
   }) : super(key: key);
 
   @override
@@ -29,12 +32,15 @@ class LeftDrawer extends StatelessWidget {
                   ),
                   Column(
                     children: <Widget>[
+                      SizedBox(
+                        height: size.height / 10,
+                      ),
                       Center(
                         child: Padding(
                           padding: const EdgeInsets.only(top: 50.0),
                           child: Image.asset(
                             'assets/images/appicon.png',
-                            height: (size.width / 2) - 20,
+                            height: (size.width / 3),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -54,38 +60,41 @@ class LeftDrawer extends StatelessWidget {
                   ),
                 ],
               ),
-              // TODO : update routes here
+              // TODO : update builderFunctions here
               DrawerTile(
                 name: 'Notifications',
-                route: 'notifications',
+                route: null,
               ),
               DrawerTile(
                 name: 'Cash In',
-                route: '',
+                route: null,
               ),
               DrawerTile(
                 name: 'Cash Out',
-                route: '',
+                route: null,
               ),
               DrawerTile(
                 name: 'Send Money',
-                route: '',
+                route: SendMoneyScreen(
+                  mobile: mobile,
+                ),
               ),
               DrawerTile(
                 name: 'Scan To Pay',
-                route: '',
+                route: null,
               ),
               DrawerTile(
                 name: 'History',
-                route: 'history',
+                route: null,
               ),
               DrawerTile(
                 name: 'Settings',
-                route: '',
+                route: null,
               ),
               DrawerTileLogOut(
                 name: 'Log Out',
                 route: 'login',
+                mobile: mobile,
               ),
             ],
           ),

@@ -6,7 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/utils/url.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
+import 'package:stitchwallert/widgets/error_dialog.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
 import 'package:stitchwallert/widgets/pill_button_login.dart';
 
@@ -24,12 +26,44 @@ class _LogInScreenState extends State<LogInScreen> {
 // ::: Make Api call to Monkey Api
   logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
-      print('show error snack - null input');
+      // ::: Show Error to user when no input is given
+      return showDialog(
+        context: context,
+        builder: (context) => ErrorDialog(
+          errorMessage: 'Please enter your mobile number and password',
+        ),
+      );
     } else {
-      var url = 'http://192.168.1.100:3000/login/$inputMobile/$inputPassword';
+      var url = 'http://$monkeyapi/login/$inputMobile/$inputPassword';
       var response = await http.post(Uri.encodeFull(url));
       status = response.statusCode;
       data = json.decode(response.body);
+    }
+  }
+
+  checkStatusCode(statusCode) {
+    print("statusCode");
+    switch (statusCode) {
+      case 200:
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) => HomePage(
+              data: data,
+              mobile: mobileNumber,
+            ),
+          ),
+        );
+        print(data[0]['user_balance']);
+        break;
+
+      case 400:
+        print('User made a typo - snack here');
+        break;
+
+      default:
+        print('generic error, mybe not connected. works');
+        break;
     }
   }
 
@@ -67,13 +101,16 @@ class _LogInScreenState extends State<LogInScreen> {
                   tag: 'page',
                   child: Column(
                     children: <Widget>[
+                      SizedBox(
+                        height: size.height / 5,
+                      ),
                       Image.asset(
                         'assets/images/appnametextonly.png',
-                        height: (size.height / 3) + 50,
+                        height: (size.height / 12) + 50,
                         fit: BoxFit.fill,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 80,
                       ),
                       InputField(
                         hintText: 'Mobile Number',
@@ -95,9 +132,13 @@ class _LogInScreenState extends State<LogInScreen> {
                         route: 'homepage',
                         name: 'Log In',
                         onclick: () {
-                          logUserIn(mobileNumber, password);
+                          print('User Clicked');
                           logUserIn(mobileNumber, password);
                           switch (status) {
+                            case 0:
+                              // im not so sure how to fix this
+                              break;
+
                             case 200:
                               Navigator.pushReplacement(
                                 context,
@@ -111,12 +152,17 @@ class _LogInScreenState extends State<LogInScreen> {
                               break;
 
                             case 400:
-                              print('User made a typo - snack here');
+                              showDialog(
+                                context: context,
+                                builder: (context) => ErrorDialog(
+                                  errorMessage: 'You entered invalid Data',
+                                ),
+                              );
                               break;
 
                             default:
-                              logUserIn(mobileNumber, password);
-                              print('generic error, mybe not connected');
+                              print('generic error, mybe not connected...');
+                              break;
                           }
                         },
                       ),

@@ -1,5 +1,5 @@
 name: stitchwallert
-description: A new Flutter application.
+description: Mobile wallet and Payment gateway developed by Byron Wezvo.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -11,7 +11,8 @@ description: A new Flutter application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+# (Release Version Number).(Development Month).(Development Week)
+version: 0.1.2+1
 
 environment:
   sdk: '>=2.1.0 <3.0.0'
@@ -42,6 +43,7 @@ flutter:
   assets:
     - assets/images/appicon.png
     - assets/images/appnametextonly.png
+    - assets/images/appiconcircles.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

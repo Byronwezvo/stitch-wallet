@@ -4,7 +4,7 @@ import 'package:stitchwallert/widgets/dot.dart';
 
 class DrawerTile extends StatelessWidget {
   final String name;
-  final String route;
+  final Widget route;
   const DrawerTile({
     Key key,
     this.name,
@@ -17,7 +17,13 @@ class DrawerTile extends StatelessWidget {
     return Material(
       color: appColorBlack,
       child: InkWell(
-        onTap: () => Navigator.popAndPushNamed(context, route),
+        onTap: () {
+          Navigator.pop(context);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (BuildContext context) => route),
+          );
+        },
         child: Container(
           height: 60,
           child: Row(

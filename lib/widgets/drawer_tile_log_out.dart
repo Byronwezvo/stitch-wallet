@@ -1,16 +1,28 @@
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/main.dart';
 import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/utils/url.dart';
 import 'package:stitchwallert/widgets/dot.dart';
 
 class DrawerTileLogOut extends StatelessWidget {
   final String name;
   final String route;
+  final String mobile;
   const DrawerTileLogOut({
     Key key,
     this.name,
     this.route,
+    this.mobile,
   }) : super(key: key);
+
+  // ::: log User Out
+
+  logOut(String usermobile) async {
+    var url = 'http://$monkeyapi/logout/$usermobile';
+    await http.post(Uri.encodeFull(url));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +32,14 @@ class DrawerTileLogOut extends StatelessWidget {
       child: InkWell(
         onTap: () {
           // TODO : Call api for user log out
-          Navigator.pop(context, main());
-          Navigator.pushReplacementNamed(context, 'login');
+          Future.delayed(
+            Duration(seconds: 5),
+            () {
+              logOut(mobile);
+              Navigator.pop(context, main());
+              Navigator.pushReplacementNamed(context, 'login');
+            },
+          );
         },
         child: Container(
           height: 60,

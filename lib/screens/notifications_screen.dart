@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/utils/colors.dart';
+import 'package:stitchwallert/utils/overwrite_glow_color.dart';
 import 'package:stitchwallert/widgets/notifications_tile.dart';
 
 class NotificationsScreen extends StatefulWidget {
@@ -46,18 +47,21 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           height: size.height,
           width: size.width,
           // TODO : Create a List View Builder
-          child: ListView.builder(
-            itemCount: notificationsList.length,
-            itemBuilder: (BuildContext ctx, int i) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                child: NotificationsTile(
-                  size: size,
-                  message: '${notificationsList[i]['message']}',
-                  time: '${notificationsList[i]['date']}',
-                ),
-              );
-            },
+          child: GlowingOverscrollColorChanger(
+            color: appColorOrange,
+            child: ListView.builder(
+              itemCount: notificationsList.length,
+              itemBuilder: (BuildContext ctx, int i) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: NotificationsTile(
+                    size: size,
+                    message: '${notificationsList[i]['message']}',
+                    time: '${notificationsList[i]['date']}',
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

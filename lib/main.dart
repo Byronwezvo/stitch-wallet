@@ -5,6 +5,7 @@ import 'package:stitchwallert/screens/history_screen.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/log_in_screen.dart';
 import 'package:stitchwallert/screens/notifications_screen.dart';
+import 'package:stitchwallert/screens/send_money_screen.dart';
 import 'package:stitchwallert/screens/splash_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         'createAccount': (BuildContext ctx) => CreateAccount(),
         'login': (BuildContext ctx) => LogInScreen(),
         'generateotp': (BuildContext ctx) => GenerateOTPScreen(),
+        'sendmoney': (BuildContext ctx)=> SendMoneyScreen(),
       },
     );
   }

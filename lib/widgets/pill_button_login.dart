@@ -14,55 +14,49 @@ class PillButtonLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onclick,
-      child: Container(
-        height: 40,
-        width: 150,
-        child: Row(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 20,
-                right: 22.5,
-              ),
-              child: Container(
-                height: 15,
-                width: 15,
-                decoration: BoxDecoration(
-                  color: appColorMaroon,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: appdarkShadowColor,
-                      blurRadius: 3,
-                      offset: Offset(1, 1),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(50),
+      child: Material(
+        color: appColorOrange,
+        child: InkWell(
+          onTap: onclick,
+          splashColor: appColorKhaki,
+          child: Container(
+            height: 40,
+            width: 150,
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 22.5,
+                  ),
+                  child: Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                      color: appColorMaroon,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: appdarkShadowColor,
+                          blurRadius: 3,
+                          offset: Offset(1, 1),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+                Text(
+                  name,
+                  style: TextStyle(
+                    color: appColorMaroon,
+                    fontFamily: 'Nova',
+                    fontSize: 15,
+                  ),
+                ),
+              ],
             ),
-            Text(
-              name,
-              style: TextStyle(
-                color: appColorMaroon,
-                fontFamily: 'Nova',
-                fontSize: 15,
-              ),
-            ),
-          ],
-        ),
-        decoration: BoxDecoration(
-          color: appColorOrange,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 3,
-              color: appdarkShadowColor,
-              offset: Offset(1, 2),
-            ),
-          ],
-          borderRadius: BorderRadius.all(
-            Radius.circular(50),
           ),
         ),
       ),

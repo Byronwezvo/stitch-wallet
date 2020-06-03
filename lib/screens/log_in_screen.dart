@@ -1,9 +1,8 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/login_halt_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
@@ -77,7 +76,7 @@ class _LogInScreenState extends State<LogInScreen> {
   // :: if true route to LoginHalt
   // :: if false show error dialog
   validateInput() {
-    if (mobileNumber == '' && password == '') {
+    if (mobileNumber == '' || password == '') {
       // ::: Show Error to user when no input is given
       return showDialog(
         context: context,
@@ -86,7 +85,15 @@ class _LogInScreenState extends State<LogInScreen> {
         ),
       );
     } else {
-      print('route here');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext ctx) => LoginHaltScreen(
+            numberValue: mobileNumber,
+            passwordValue: password,
+          ),
+        ),
+      );
     }
   }
 

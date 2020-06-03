@@ -1,67 +1,73 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:http/http.dart' as http;
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/utils/url.dart';
 import 'package:stitchwallert/widgets/connection_error_dialog.dart';
-import 'package:stitchwallert/widgets/error_dialog.dart';
 
 class LoginHaltScreen extends StatefulWidget {
+  final String passwordValue;
+  final String numberValue;
+
+  const LoginHaltScreen({
+    Key key,
+    this.numberValue,
+    this.passwordValue,
+  }) : super(key: key);
+
   @override
   _LoginHaltScreenState createState() => _LoginHaltScreenState();
 }
 
 class _LoginHaltScreenState extends State<LoginHaltScreen> {
+  // ::: Local variables from arguments.
+  String loginNumber = '';
+  String loginPassword = '';
+
   // ::: Make an api call
-  LogUserIn() async {
-    // Logic to navigate user to Homepage or show Errors
-    validateLogIn(statusCode, data) {
-      print(statusCode.runtimeType);
-      print(data);
+  authenticateUser(String number, String password) async {
+    print(number);
+    var url = 'http://$monkeyapi/login/$number/$password';
+    var response = await http.post(Uri.encodeFull(url));
+    print(response.body);
+    validateLogIn(response.statusCode, json.decode(response.body));
+  }
 
-      if (statusCode == 200) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (BuildContext ctx) => HomePage(
-              data: data,
-            ),
-          ),
-        );
-      }
-    }
+  // ::: Validating and routing
+  validateLogIn(statusCode, data) {
+    print(statusCode.runtimeType);
+    print(data);
 
-    logUserIn(String inputMobile, String inputPassword) async {
-      if (inputMobile == '' && inputPassword == '') {
-        // ::: Show Error to user when no input is given
-        return showDialog(
-          context: context,
-          builder: (context) => ErrorDialog(
-            errorMessage: 'Please enter your mobile number and password',
+    if (statusCode == 200) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext ctx) => HomePage(
+            data: data,
           ),
-        );
-      } else {
-        var url = 'http://$monkeyapi/login/$inputMobile/$inputPassword';
-        var response = await http.post(Uri.encodeFull(url));
-        //print(response.body);
-        validateLogIn(response.statusCode, json.decode(response.body));
-      }
+        ),
+      );
     }
   }
 
   // :: Modify the initial state
   void initState() {
     super.initState();
-    LogUserIn();
+
+    // ::: Change local variables into input from login Screen
+    loginNumber = widget.numberValue;
+    loginPassword = widget.passwordValue;
+
+    // ::: Call the Log in method
+    authenticateUser(loginNumber, loginPassword);
 
     // ::: Add logic that if request is not made _seconds we throw an Error dialog
     Future.delayed(
-      Duration(seconds: 5),
+      Duration(minutes: 1),
       () {
         // ::: Display an Error Dialog
         return showDialog(

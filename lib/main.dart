@@ -4,6 +4,7 @@ import 'package:stitchwallert/screens/generate_otp_screen.dart';
 import 'package:stitchwallert/screens/history_screen.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/log_in_screen.dart';
+import 'package:stitchwallert/screens/login_halt_screen.dart';
 import 'package:stitchwallert/screens/notifications_screen.dart';
 import 'package:stitchwallert/screens/send_money_screen.dart';
 import 'package:stitchwallert/screens/splash_screen.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         'login': (BuildContext ctx) => LogInScreen(),
         'generateotp': (BuildContext ctx) => GenerateOTPScreen(),
         'sendmoney': (BuildContext ctx) => SendMoneyScreen(),
+        'loginhalt': (BuildContext ctx) => LoginHaltScreen(),
       },
     );
   }

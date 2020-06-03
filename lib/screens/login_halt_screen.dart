@@ -39,9 +39,10 @@ class _LoginHaltScreenState extends State<LoginHaltScreen> {
 
   // ::: Validating and routing
   validateLogIn(statusCode, data) {
-    print(statusCode.runtimeType);
+    print(statusCode);
     print(data);
 
+    // ::: if 200 log user to new route
     if (statusCode == 200) {
       Navigator.pushReplacement(
         context,
@@ -49,6 +50,21 @@ class _LoginHaltScreenState extends State<LoginHaltScreen> {
           builder: (BuildContext ctx) => HomePage(
             data: data,
           ),
+        ),
+      );
+    }
+
+    // ::: if 400 return with response
+    if (statusCode == 400) {
+      return showDialog(
+        context: context,
+        builder: (context) => ConnectionErrorDialog(
+          onOkayClick: () {
+            Navigator.pop(context);
+            Navigator.pop(context);
+          },
+          errorMessage:
+              'Please check your mobile and password or if you don\'t have an account create one',
         ),
       );
     }
@@ -63,7 +79,10 @@ class _LoginHaltScreenState extends State<LoginHaltScreen> {
     loginPassword = widget.passwordValue;
 
     // ::: Call the Log in method
-    authenticateUser(loginNumber, loginPassword);
+    Future.delayed(
+      Duration(seconds: 3),
+      () => authenticateUser(loginNumber, loginPassword),
+    );
 
     // ::: Add logic that if request is not made _seconds we throw an Error dialog
     Future.delayed(

@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         'createAccount': (BuildContext ctx) => CreateAccount(),
         'login': (BuildContext ctx) => LogInScreen(),
         'generateotp': (BuildContext ctx) => GenerateOTPScreen(),
-        'sendmoney': (BuildContext ctx)=> SendMoneyScreen(),
+        'sendmoney': (BuildContext ctx) => SendMoneyScreen(),
       },
     );
   }

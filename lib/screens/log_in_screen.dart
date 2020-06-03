@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
+import 'package:stitchwallert/screens/login_halt_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/utils/url.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
@@ -23,6 +24,7 @@ class _LogInScreenState extends State<LogInScreen> {
   String password = '';
   List data = [];
 
+// TODO : Delete all this
 // ::: Make Api call to Monkey Api
   logUserIn(String inputMobile, String inputPassword) async {
     if (mobileNumber == '' && password == '') {
@@ -69,6 +71,23 @@ class _LogInScreenState extends State<LogInScreen> {
     setState(() {
       password = passwordInput;
     });
+  }
+
+  // ::: Check to see if user typing something
+  // :: if true route to LoginHalt
+  // :: if false show error dialog
+  validateInput() {
+    if (mobileNumber == '' && password == '') {
+      // ::: Show Error to user when no input is given
+      return showDialog(
+        context: context,
+        builder: (context) => ErrorDialog(
+          errorMessage: 'Please enter your mobile number and password',
+        ),
+      );
+    } else {
+      print('route here');
+    }
   }
 
   @override
@@ -121,7 +140,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       PillButtonLogin(
                         route: 'homepage',
                         name: 'Log In',
-                        onclick: () => null,
+                        onclick: () => validateInput(),
                       ),
                       SizedBox(
                         height: 30,

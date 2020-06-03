@@ -1,12 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:stitchwallert/screens/home_screen.dart';
 import 'package:stitchwallert/screens/login_halt_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
-import 'package:stitchwallert/utils/url.dart';
 import 'package:stitchwallert/widgets/clickable_text.dart';
 import 'package:stitchwallert/widgets/error_dialog.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
@@ -18,45 +13,8 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
-  int status = 0;
   String mobileNumber = '';
   String password = '';
-  List data = [];
-
-// TODO : Delete all this
-// ::: Make Api call to Monkey Api
-  logUserIn(String inputMobile, String inputPassword) async {
-    if (mobileNumber == '' && password == '') {
-      // ::: Show Error to user when no input is given
-      return showDialog(
-        context: context,
-        builder: (context) => ErrorDialog(
-          errorMessage: 'Please enter your mobile number and password',
-        ),
-      );
-    } else {
-      var url = 'http://$monkeyapi/login/$inputMobile/$inputPassword';
-      var response = await http.post(Uri.encodeFull(url));
-      //print(response.body);
-      validateLogIn(response.statusCode, json.decode(response.body));
-    }
-  }
-
-  validateLogIn(statusCode, data) {
-    print(statusCode.runtimeType);
-    print(data);
-
-    if (statusCode == 200) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext ctx) => HomePage(
-            data: data,
-          ),
-        ),
-      );
-    }
-  }
 
   // ::: Set mobile text input value to local variable
   setMobileNumber(String mobileInput) {

@@ -86,7 +86,7 @@ class _LoginHaltScreenState extends State<LoginHaltScreen> {
 
     // ::: Add logic that if request is not made _seconds we throw an Error dialog
     Future.delayed(
-      Duration(minutes: 1),
+      Duration(minutes: 2),
       () {
         // ::: Display an Error Dialog
         return showDialog(

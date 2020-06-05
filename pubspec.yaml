@@ -12,7 +12,7 @@ description: Mobile wallet and Payment gateway developed by Byron Wezvo.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # (Release Version Number).(Development Month).(Development Week)
-version: 0.1.2+1
+version: 0.1.3+1
 
 environment:
   sdk: '>=2.1.0 <3.0.0'

@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'package:stitchwallert/screens/home_screen.dart';
+import 'package:stitchwallert/screens/send_money_halt_screen.dart';
 import 'package:stitchwallert/utils/colors.dart';
 import 'package:stitchwallert/utils/overwrite_glow_color.dart';
 import 'package:stitchwallert/utils/url.dart';
@@ -11,6 +12,7 @@ import 'package:stitchwallert/widgets/error_dialog.dart';
 import 'package:stitchwallert/widgets/input_field.dart';
 import 'package:stitchwallert/widgets/pill_button.dart';
 import 'package:stitchwallert/widgets/success_dialog.dart';
+import 'package:stitchwallert/widgets/transaction_confimation.dart';
 
 class SendMoneyScreen extends StatefulWidget {
   final List data;
@@ -189,7 +191,26 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                 ),
                 PillButton(
                   name: 'Confirm',
-                  onclick: () => confirmTransaction(),
+                  onclick: () => showDialog(
+                    context: context,
+                    builder: (context) => TransactionConfimation(
+                      amount: amountToSend,
+                      number: recieverNumber,
+                      onOkayPress: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext ctx) => SendMoneyHaltScreen(
+                              amount: amountToSend,
+                              sender: senderNumber,
+                              reciever: recieverNumber,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 )
               ],
             ),

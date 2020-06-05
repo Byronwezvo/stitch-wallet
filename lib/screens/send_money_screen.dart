@@ -140,8 +140,8 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                   height: size.height / 3,
                   child: Center(
                     child: Image.asset(
-                      'assets/images/appnametextonly.png',
-                      height: (size.height / 8),
+                      'assets/images/appiconcircles.png',
+                      height: (size.height / 10),
                       fit: BoxFit.fill,
                     ),
                   ),
